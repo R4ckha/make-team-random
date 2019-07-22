@@ -1,0 +1,13 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background: url(../ressources/dorado.png);
+}
+
+.button-red {
+    background: #ff40402e;
+    border: none;
+    height: 40px;
+    color: white;
+}
+
