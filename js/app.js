@@ -6,7 +6,7 @@ const playerList = [
     "neeble"
 ];
 
-window.onload = () => {
+document.onload = () => {
     list = new View(playerList);
     list.drawButtons();
 }
@@ -23,8 +23,8 @@ class View
     }
 
     drawButtons() {
-        for (let i = 0; i < this.playerNumbers; i++) {
-            new Button(this.playerList[i]);
+        for (let player in this.playerNumbers) {
+            new Button(player);
         }
     }
 
@@ -34,7 +34,7 @@ class Button
 {
     constructor(player) {
         this.player = player;
-        this.body = document.getElementsByTagName("body")[0];
+        this.container = document.body;
         this.displayButton();
     }
 
@@ -42,6 +42,6 @@ class Button
         let newButton = document.createElement("button");
         newButton.innerHTML = this.player;
         newButton.setAttribute('class', 'button-red')
-        this.body.appendChild(newButton);
+        this.container.appendChild(newButton);
     }
 }
